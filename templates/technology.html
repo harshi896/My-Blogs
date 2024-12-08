@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Technology{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/technology.css"/>
+
+<div class="container mt-5">
+    <h2>Technology</h2>
+    <div class="row">
+        {% for tech in technology_posts %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ tech.image_url }}" class="card-img-top" alt="{{ tech.title }}">
+                <a href="{% url 'post_detail' tech.id %}" class="btn btn-primary">Read More</a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ tech.title }}</h5>
+                    <p class="card-text">{{ tech.excerpt }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

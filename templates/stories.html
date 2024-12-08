@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Stories{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/stories.css"/>
+
+<div class="container mt-5">
+    <h2>All Stories</h2>
+    <div class="row">
+        {% for story in stories %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ story.image_url }}" class="card-img-top" alt="{{ story.title }}">
+                <a href="{% url 'post_detail' story.id %}" class="btn btn-primary">Read More</a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ story.title }}</h5>
+                    <p class="card-text">{{ story.excerpt }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

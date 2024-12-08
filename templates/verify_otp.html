@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Verify OTP{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/verify_otp.css"/>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="/static/verify_otp.css"/>
+    <script>
+        window.onload = function() {
+            alert('Please enter the OTP sent to your email.');
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>OTP Verification</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="{{ action }}">
+            {{ form.as_p }}
+            <button type="submit">Verify OTP</button>
+        </form>
+        {% if messages %}
+            <div class="message">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+{% endblock body %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Blogs{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/blogs.css"/>
+<div class="container mt-5">
+    <h2>All Blogs</h2>
+    <div class="row">
+        {% for blog in blogs %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ blog.image_url }}" class="card-img-top" alt="{{ blog.title }}">
+                <a href="{% url 'post_detail' blog.id %}" class="btn btn-primary">Read More</a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ blog.title }}</h5>
+                    <p class="card-text">{{ blog.excerpt }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

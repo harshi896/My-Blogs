@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Post{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/add_post.css"/>
+
+<div class="container mt-5">
+    <h2>Add a New Post</h2>
+    <form method="POST" enctype="multipart/form-data" action="/add_post">
+        {% csrf_token %}
+        <div class="card p-4">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <!-- Plain textarea for content without CKEditor -->
+                <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image" required>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category" name="category" required>
+                    <option value="Blogs">Blogs</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Stories">Stories</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="published_date" class="form-label">Published Date</label>
+                <input type="date" class="form-control" id="published_date" name="published_date" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Post</button>
+        </div>
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Signup{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <h2>Signup</h2>
+    <link rel="stylesheet" href="/static/signup3.css"/>
+
+    <form method="post" action="/signup">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="checkbox" id="togglePassword"> Show Password
+        </div>
+        <button type="submit" class="btn btn-primary">Signup</button>
+    </form>
+</div>
+
+<!-- JavaScript to toggle password visibility -->
+<script>
+document.getElementById('togglePassword').addEventListener('change', function() {
+    const passwordField = document.getElementById('password');
+    if (this.checked) {
+        passwordField.type = 'text';
+    } else {
+        passwordField.type = 'password';
+    }
+});
+</script>
+{% endblock body %}

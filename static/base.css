@@ -1,0 +1,94 @@
+/* base.css */
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    margin-bottom: 0; /* Remove extra space below the navbar */
+    padding: 0.5rem 1rem; /* Adjust padding to match the original size */
+}
+
+.navbar-brand {
+    font-size: 1.25rem; /* Adjust brand font size */
+}
+
+.navbar-nav {
+    margin-left: auto; /* Align nav items to the right */
+}
+
+.navbar-nav .nav-link {
+    margin-right: 15px; /* Spacing between nav items */
+}
+
+.navbar-toggler {
+    border: none; /* Remove border from the toggle button */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 30 30'%3e%3cpath stroke='currentColor' stroke-width='2' d='M5 15h20M5 9h20m-20 6h20'/%3e%3c/svg%3e"); /* Custom icon */
+}
+
+/* Alert styling */
+.alert {
+    margin-bottom: 20px; /* Space below the alert */
+}
+
+/* Container styling */
+.container-fluid, .container {
+    padding: 15px; /* General padding */
+}
+
+/* Card styling */
+.card {
+    border: none; /* Remove default card border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure image and content fit inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto; /* Ensure the image maintains aspect ratio */
+}
+
+.card-body {
+    padding: 15px; /* Padding inside the card */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Title font size */
+}
+
+.card-text {
+    font-size: 1rem; /* Text font size */
+}
+
+/* Featurette styling */
+.featurette-divider {
+    margin: 30px 0; /* Space above and below the featurette */
+}
+
+.featurette-heading {
+    font-size: 2rem; /* Heading font size */
+}
+
+.lead {
+    font-size: 1.25rem; /* Lead paragraph font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        margin-left: 0; /* Reset alignment for mobile */
+    }
+    
+    .navbar-nav .nav-link {
+        margin-right: 0; /* Reset margin for mobile */
+        margin-bottom: 10px; /* Space below each item */
+    }
+}

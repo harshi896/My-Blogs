@@ -1,0 +1,79 @@
+/* index.css */
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 1rem; /* Add some padding around the text */
+    border-radius: 5px; /* Optional: Rounded corners for the background */
+}
+
+.carousel-caption h5, .carousel-caption p {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 0; /* Remove default margin to avoid extra spacing */
+}
+
+/* Category section */
+.marketing .row {
+    margin-bottom: 2rem;
+}
+
+.marketing .col-lg-4 {
+    text-align: center;
+}
+
+.marketing .bd-placeholder-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.marketing h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Recent posts section */
+.card-img-top {
+    height: 200px; /* Adjust based on your design */
+    object-fit: cover;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Featurettes */
+.featurette-divider {
+    margin: 2rem 0;
+}
+
+.featurette-heading {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.featurette p {
+    font-size: 1rem;
+    line-height: 1.5;
+}

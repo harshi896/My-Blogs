@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Posts</title>
+    <link rel="stylesheet" href="/static/view_posts.css"/>
+</head>
+<body>
+    <h1>All Posts</h1>
+    <div class="posts-container">
+        {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.title }}</h2>
+                <p>Published on: {{ post.published_date }}</p>
+                <p>Category: {{ post.category }}</p>
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                {% endif %}
+                <p>{{ post.content|truncatewords:50 }}</p> <!-- Truncate the content to 50 words -->
+                <a href="{% url 'post_detail' post.id %}">Read More</a> <!-- Link to post detail view -->
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

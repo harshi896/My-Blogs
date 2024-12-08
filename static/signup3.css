@@ -1,0 +1,26 @@
+/* signup.css */
+body {
+    background-color: #e9ecef; /* Slightly darker background color */
+}
+
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}

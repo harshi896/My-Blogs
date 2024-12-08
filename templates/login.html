@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/login.css"/>
+<div class="container mt-5">
+  <h2>Login</h2>
+  <form method="POST" action="/login">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+      <input type="checkbox" id="togglePassword"> Show Password
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+
+  <div class="mt-3">
+    <a href="{% url 'forgot_password' %}">Forgot Password?</a>
+  </div>
+</div>
+
+<!-- JavaScript to toggle password visibility -->
+<script>
+document.getElementById('togglePassword').addEventListener('change', function() {
+    const passwordField = document.getElementById('password');
+    if (this.checked) {
+        passwordField.type = 'text';
+    } else {
+        passwordField.type = 'password';
+    }
+});
+</script>
+{% endblock body %}
